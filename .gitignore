@@ -1,0 +1,65 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Data files (Git只管理代码)
+data/
+temp/
+result/
+writing/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Backup files
+*.bak
+*.old
+*.~*
+
+# Stata files
+*.log
+*.smcl
+*.dta.old
+
+# Large files (>= 100MB)
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+*.h5
+*.hdf5
+*.nc
+*.mat

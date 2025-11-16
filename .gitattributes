@@ -1,0 +1,27 @@
+# 处理跨平台换行符问题
+*.py text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.do text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.stignore text eol=lf
+
+# 二进制文件标识
+*.dta binary
+*.zip binary
+*.tar.gz binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.h5 binary
+*.mat binary
+*.nc binary

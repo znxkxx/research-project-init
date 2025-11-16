@@ -37,7 +37,7 @@
 │   └── reports/             # 结果报告
 ├── writing/                 # 写作目录（Syncthing同步）
 │   ├── manuscripts/         # 论文手稿
-│   ├── slides/              # 演示文稿
+│   ├── presentations/              # 演示文稿
 │   └── submission/          # 投稿相关内容
 ├── README.md                # 项目整体说明
 ├── .gitignore               # 忽略规则

@@ -21,8 +21,10 @@ mkdir temp >nul 2>nul
 mkdir results >nul 2>nul
 mkdir results\figures >nul 2>nul
 mkdir results\tables >nul 2>nul
-mkdir docs >nul 2>nul
 mkdir writing >nul 2>nul
+mkdir writing\manuscripts >nul 2>nul
+mkdir writing\presentations >nul 2>nul
+mkdir writing\submissions >nul 2>nul
 
 echo  已创建目录结构
 echo.
@@ -135,19 +137,23 @@ break > .gitignore
 @echo # 日志文件 >> .gitignore
 @echo *.log >> .gitignore
 @echo logs/ >> .gitignore
+@echo. >> .gitignore
+@echo # syncthing相关 >> .gitignore
+@echo .stfolder/ >> .gitignore
+@echo .stignore/ >> .gitignore
 echo  已创建.gitignore文件
 
 REM 创建.stignore文件
 echo 创建.stignore文件...
 break > .stignore
 @echo # Git相关 >> .stignore
-@echo .git/ >> .stignore
+@echo .git >> .stignore
 @echo .gitignore >> .stignore
 @echo .gitattributes >> .stignore
 @echo. >> .stignore
 @echo # 不同步的目录 >> .stignore
-@echo temp/ >> .stignore
-@echo code/ >> .stignore
+@echo temp >> .stignore
+@echo code >> .stignore
 @echo. >> .stignore
 @echo # OS generated files >> .stignore
 @echo .DS_Store >> .stignore
@@ -159,14 +165,14 @@ break > .stignore
 @echo Thumbs.db >> .stignore
 @echo. >> .stignore
 @echo # IDE files >> .stignore
-@echo .idea/ >> .stignore
-@echo .vscode/ >> .stignore
+@echo .idea >> .stignore
+@echo .vscode >> .stignore
 @echo *.swp >> .stignore
 @echo *.swo >> .stignore
 @echo *~ >> .stignore
 @echo. >> .stignore
 @echo # Python files >> .stignore
-@echo __pycache__/ >> .stignore
+@echo __pycache__ >> .stignore
 @echo *.py[cod] >> .stignore
 @echo *$py.class >> .stignore
 @echo *.so >> .stignore
@@ -181,7 +187,7 @@ break > .stignore
 @echo. >> .stignore
 @echo # Log files >> .stignore
 @echo *.log >> .stignore
-@echo logs/ >> .stignore
+@echo logs >> .stignore
 @echo. >> .stignore
 @echo # MS-Office/WPS临时文件 >> .stignore
 @echo ~$* >> .stignore
@@ -198,9 +204,9 @@ break > .stignore
 @echo ~*.dps >> .stignore
 @echo. >> .stignore
 @echo # 虚拟环境 >> .stignore
-@echo venv/ >> .stignore
-@echo env/ >> .stignore
-@echo ENV/ >> .stignore
+@echo venv >> .stignore
+@echo env >> .stignore
+@echo ENV >> .stignore
 echo  已创建.stignore文件
 
 REM 创建README.md文件
@@ -214,7 +220,7 @@ break > README.md
 @echo. >> README.md
 @echo ## 目录结构 >> README.md
 @echo. >> README.md
-@echo ``` >> README.md
+@echo ```plaintext >> README.md
 @echo ├── code/              # 代码目录 >> README.md
 @echo │   ├── clean/         # 数据清洗代码 >> README.md
 @echo │   ├── analysis/      # 数据分析代码 >> README.md
@@ -229,6 +235,9 @@ break > README.md
 @echo │   └── tables/        # 表格结果 >> README.md
 @echo ├── docs/              # 文档目录 >> README.md
 @echo └── writing/           # 写作相关文件 >> README.md
+@echo │   ├── manuscripts/   # 论文手稿 >> README.md
+@echo │   ├── presentations/ # 演示文稿 >> README.md
+@echo │   └── submission/    # 投稿相关内容 >> README.md
 @echo ``` >> README.md
 @echo. >> README.md
 @echo ## Git同步规则 >> README.md
@@ -247,20 +256,19 @@ break > README.md
 @echo 2. 在`code`目录中编写数据处理和分析代码 >> README.md
 @echo 3. 处理后的数据保存在`data/processed`目录 >> README.md
 @echo 4. 分析结果保存在`results`目录 >> README.md
-@echo 5. 文档放在`docs`目录 >> README.md
-@echo 6. 写作相关文件放在`writing`目录 >> README.md
+@echo 5. 写作相关文件放在`writing`目录 >> README.md
 echo  已创建README.md文件
 
-REM 创建代码占位文件
-echo 创建代码占位文件...
-break > code\__init__.py
-@echo # 初始化文件 >> code\__init__.py
-break > code\clean\__init__.py
-@echo # 初始化文件 >> code\clean\__init__.py
-break > code\analysis\__init__.py
-@echo # 初始化文件 >> code\analysis\__init__.py
-break > code\utils\__init__.py
-@echo # 初始化文件 >> code\utils\__init__.py
+@REM REM 创建代码占位文件
+@REM echo 创建代码占位文件...
+@REM break > code\__init__.py
+@REM @echo # 初始化文件 >> code\__init__.py
+@REM break > code\clean\__init__.py
+@REM @echo # 初始化文件 >> code\clean\__init__.py
+@REM break > code\analysis\__init__.py
+@REM @echo # 初始化文件 >> code\analysis\__init__.py
+@REM break > code\utils\__init__.py
+@REM @echo # 初始化文件 >> code\utils\__init__.py
 
 echo  已创建初始化文件
 
@@ -272,7 +280,7 @@ echo 已创建以下内容：
 echo 1. 标准的项目目录结构
 echo 2. .gitattributes、.gitignore和.stignore配置文件
 echo 3. README.md项目说明文档
-echo 4. 代码占位文件
+@REM echo 4. 代码占位文件
 echo.
 echo 现在您可以开始您的研究工作了！
 echo.

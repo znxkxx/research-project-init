@@ -20,10 +20,7 @@ echo "  已创建temp目录"
 mkdir -p results/figures results/tables
 echo "  已创建results目录结构"
 
-mkdir -p docs
-echo "  已创建docs目录"
-
-mkdir -p writing
+mkdir -p writing/manuscripts writing/presentations writing/submissions
 echo "  已创建writing目录"
 echo ""
 
@@ -137,6 +134,10 @@ writing/
 # 日志文件
 *.log
 logs/
+
+# syncthing相关
+.stfolder/
+.stignore
 EOF
 
 echo "  已创建.gitignore文件"
@@ -145,13 +146,13 @@ echo "  已创建.gitignore文件"
 echo "创建.stignore文件..."
 cat > .stignore << 'EOF'
 # Git相关
-.git/
+.git
 .gitignore
 .gitattributes
 
 # 不同步的目录
-temp/
-code/
+temp
+code
 
 # OS generated files
 .DS_Store
@@ -163,14 +164,14 @@ ehthumbs.db
 Thumbs.db
 
 # IDE files
-.idea/
-.vscode/
+.idea
+.vscode
 *.swp
 *.swo
 *~
 
 # Python files
-__pycache__/
+__pycache__
 *.py[cod]
 *$py.class
 *.so
@@ -202,9 +203,9 @@ logs/
 ~*.dps
 
 # 虚拟环境
-venv/
-env/
-ENV/
+venv
+env
+ENV
 EOF
 
 echo "  已创建.stignore文件"
@@ -220,6 +221,7 @@ cat > README.md << 'EOF'
 
 ## 目录结构
 
+``` plaintext
 ├── code/              # 代码目录
 │   ├── clean/         # 数据清洗代码
 │   ├── analysis/      # 数据分析代码
@@ -234,7 +236,10 @@ cat > README.md << 'EOF'
 │   └── tables/        # 表格结果
 ├── docs/              # 文档目录
 └── writing/           # 写作相关文件
-
+    ├── manuscripts/   # 论文手稿
+    ├── presentations/ # 演示文稿
+    └── submission/    # 投稿相关内容
+```
 
 ## Git同步规则
 
@@ -252,22 +257,21 @@ cat > README.md << 'EOF'
 2. 在`code`目录中编写数据处理和分析代码
 3. 处理后的数据保存在`data/processed`目录
 4. 分析结果保存在`results`目录
-5. 文档放在`docs`目录
-6. 写作相关文件放在`writing`目录
+5. 写作相关文件放在`writing`目录
 EOF
 
 echo "  已创建README.md文件"
 
-# 创建代码占位文件
-echo "创建代码占位文件..."
-touch code/__init__.py code/clean/__init__.py code/analysis/__init__.py code/utils/__init__.py
-echo "# 初始化文件" > code/__init__.py
-echo "# 初始化文件" > code/clean/__init__.py
-echo "# 初始化文件" > code/analysis/__init__.py
-echo "# 初始化文件" > code/utils/__init__.py
+# # 创建代码占位文件
+# echo "创建代码占位文件..."
+# touch code/__init__.py code/clean/__init__.py code/analysis/__init__.py code/utils/__init__.py
+# echo "# 初始化文件" > code/__init__.py
+# echo "# 初始化文件" > code/clean/__init__.py
+# echo "# 初始化文件" > code/analysis/__init__.py
+# echo "# 初始化文件" > code/utils/__init__.py
 
-echo "  已创建初始化文件"
-echo ""
+# echo "  已创建初始化文件"
+# echo ""
 
 echo "==================================================="
 echo "项目初始化完成！"
@@ -276,7 +280,7 @@ echo "已创建以下内容："
 echo "1. 标准的项目目录结构"
 echo "2. .gitattributes、.gitignore和.stignore配置文件"
 echo "3. README.md项目说明文档"
-echo "4. 代码占位文件"
+#echo "4. 代码占位文件"
 echo ""
 echo "现在您可以开始您的研究工作了！"
 echo ""

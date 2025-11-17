@@ -149,6 +149,7 @@ cat > .stignore << 'EOF'
 .git
 .gitignore
 .gitattributes
+README*.md
 
 # 不同步的目录
 temp

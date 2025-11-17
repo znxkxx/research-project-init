@@ -192,7 +192,8 @@ def create_stignore():
         ".git",
         ".gitignore",
         ".gitattributes",
-        
+        "README*.md"
+
         "# 不同步的目录",
         "temp",
         "code",

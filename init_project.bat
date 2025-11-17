@@ -150,6 +150,7 @@ break > .stignore
 @echo .git >> .stignore
 @echo .gitignore >> .stignore
 @echo .gitattributes >> .stignore
+@echo .README*.md >> .stignore
 @echo. >> .stignore
 @echo # 不同步的目录 >> .stignore
 @echo temp >> .stignore

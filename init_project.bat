@@ -40,6 +40,7 @@ break > .gitattributes
 @echo # Windows批处理文件使用CRLF换行符 >> .gitattributes
 @echo *.bat text eol=crlf >> .gitattributes
 @echo # 其他文本文件使用LF换行符 >> .gitattributes
+@echo *.do text eol=lf >> .gitattributes
 @echo *.py text eol=lf >> .gitattributes
 @echo *.sh text eol=lf >> .gitattributes
 @echo *.md text eol=lf >> .gitattributes

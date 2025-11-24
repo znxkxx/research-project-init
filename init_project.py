@@ -64,6 +64,7 @@ def create_gitattributes():
         "# Windows批处理文件使用CRLF换行符",
         "*.bat text eol=crlf",
         "# 其他文本文件使用LF换行符",
+        "*.do text eol=lf",
         "*.py text eol=lf",
         "*.sh text eol=lf",
         "*.md text eol=lf",
